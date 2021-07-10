@@ -2,7 +2,7 @@ import { useState, createContext, useContext } from "react";
 
 const CartAndWishlistQuantityContext = createContext();
 
-export function useCartAndWishlistQunatity() {
+export function useCartAndWishlistQuantity() {
   return useContext(CartAndWishlistQuantityContext);
 }
 

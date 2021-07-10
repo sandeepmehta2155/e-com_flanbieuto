@@ -1,10 +1,12 @@
 import * as useComponent from "../index";
-import { useCartAndWishlistQunatity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
+import { useCartAndWishlistQuantity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
 import { useAuth } from "../Login-Page/auth-context";
 
 export function Home() {
-  const { cartTotalQuantity, wishListQuantity } = useCartAndWishlistQunatity();
+  const { cartTotalQuantity, wishListQuantity } = useCartAndWishlistQuantity();
+
   const { isUserLoggedIn } = useAuth();
+
   return (
     <>
       <img
