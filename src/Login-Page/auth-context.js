@@ -33,10 +33,7 @@ export function AuthProvider({ children }) {
 
     if (checkResponseFromDataBase === "user auth successful") {
       setUserLogin(true);
-      localStorage.setItem(
-        "wishlistObj",
-        JSON.stringify({ wishlistObj: null })
-      );
+
       localStorage.setItem("login", JSON.stringify({ login: true }));
     }
   }, [checkResponseFromDataBase]);
@@ -45,7 +42,7 @@ export function AuthProvider({ children }) {
     setUserLogin(false);
     localStorage.removeItem("cartlistLength");
     localStorage.removeItem("wishlistLength");
-    localStorage.removeItem("cartObj");
+    localStorage.removeItem("cartlistObj");
     localStorage.removeItem("login");
     localStorage.removeItem("wishlistObj");
     localStorage.removeItem("username");
@@ -60,11 +57,46 @@ export function AuthProvider({ children }) {
           password: passwordInput
         })
         .then((response) => {
-          setResponseFromDataBase(response.data?.message);
-          if (response.data.message === "user auth successful")
+          setResponseFromDataBase(response.data.message);
+          if (response.data.message === "user auth successful") {
+            // console.log(response);
+            localStorage.setItem(
+              "wishlistObj",
+              JSON.stringify({
+                wishlistObj: response.data.wishlist
+              })
+            );
+
+            localStorage.setItem(
+              "wishlistLength",
+              JSON.stringify({
+                wishlistLength: response.data.wishlist.length
+              })
+            );
+
+            localStorage.setItem(
+              "cartlistObj",
+              JSON.stringify({
+                cartlistObj: response.data.cart
+              })
+            );
+            localStorage.setItem(
+              "cartlistLength",
+              JSON.stringify({
+                cartlistLength: response.data.cart.length
+              })
+            );
+
+            localStorage.setItem(
+              "username",
+              JSON.stringify({
+                username: response.data.username
+              })
+            );
             setTimeout(() => {
               navigate("/products");
-            }, 300);
+            }, 800);
+          }
         });
     })();
   }

@@ -7,7 +7,6 @@ import { AuthProvider } from "./Login-Page/auth-context";
 import { FeaturedAuthorProvider } from "./HomePage-Components/featured-provider";
 import { BookBatchProvider } from "./HomePage-Components/book-batch-provider";
 import { ProductReducerProvider } from "./Products-Page/product-reducer";
-import { UserProvider } from "./Login-Page/user-context";
 import { CartAndWishlistQuantityProvider } from "./Cart-Wishlist-Provider/cart-wishlist-provider";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
@@ -33,23 +32,21 @@ ReactDOM.render(
   <StrictMode>
     <Router>
       <AuthProvider>
-        <UserProvider>
-          <CartAndWishlistQuantityProvider>
-            <ThemeProvider>
-              <ProductProvider>
-                <ProductReducerProvider>
-                  <FeaturedAuthorProvider>
-                    <BookBatchProvider>
-                      <FilterProvider>
-                        <App />
-                      </FilterProvider>
-                    </BookBatchProvider>
-                  </FeaturedAuthorProvider>
-                </ProductReducerProvider>
-              </ProductProvider>
-            </ThemeProvider>
-          </CartAndWishlistQuantityProvider>
-        </UserProvider>
+        <CartAndWishlistQuantityProvider>
+          <ThemeProvider>
+            <ProductProvider>
+              <ProductReducerProvider>
+                <FeaturedAuthorProvider>
+                  <BookBatchProvider>
+                    <FilterProvider>
+                      <App />
+                    </FilterProvider>
+                  </BookBatchProvider>
+                </FeaturedAuthorProvider>
+              </ProductReducerProvider>
+            </ProductProvider>
+          </ThemeProvider>
+        </CartAndWishlistQuantityProvider>
       </AuthProvider>
     </Router>
   </StrictMode>,

@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./auth-context";
 
-import { useCartAndWishlistQunatity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
+import { useCartAndWishlistQuantity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
 
-import { useUserNameProvider } from "./user-context";
 export function Login() {
   const [passwordInput, setUserPassword] = useState("");
   const {
@@ -17,8 +16,8 @@ export function Login() {
     setCheckPassword
   } = useAuth();
 
-  const { userName, setUserName } = useUserNameProvider();
-  const { cartTotalQuantity, wishListQuantity } = useCartAndWishlistQunatity();
+  const [userName, setUserName] = useState();
+  const { cartTotalQuantity, wishListQuantity } = useCartAndWishlistQuantity();
 
   function LoginHandler() {
     userName ? setUserExists("none") : setUserExists("block");
@@ -102,13 +101,6 @@ export function Login() {
           </span>
         </span>
       )}
-      <div style={{ display: "none" }}>
-        {isUserLoggedIn &&
-          localStorage.setItem(
-            "username",
-            JSON.stringify({ username: userName })
-          )}
-      </div>
     </div>
   );
 }
