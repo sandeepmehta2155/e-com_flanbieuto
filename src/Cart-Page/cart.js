@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useProd } from "../Products-Page/product-context";
 import { useProdReducer } from "../Products-Page/product-reducer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useCartAndWishlistQuantity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
 
