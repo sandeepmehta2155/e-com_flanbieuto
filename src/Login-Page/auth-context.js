@@ -40,6 +40,8 @@ export function AuthProvider({ children }) {
 
   function LogOut() {
     setUserLogin(false);
+    setUserExists("none");
+    setCheckPassword("none");
     localStorage.removeItem("cartlistLength");
     localStorage.removeItem("wishlistLength");
     localStorage.removeItem("cartlistObj");

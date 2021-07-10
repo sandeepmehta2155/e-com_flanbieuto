@@ -20,7 +20,9 @@ export const WishList = () => {
     setCartQuantity
   } = useCartAndWishlistQuantity();
 
-  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj"));
+  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
+    wishlistObj: []
+  };
 
   const [wishlist, setWishlist] = useState(wishlistObj);
 
