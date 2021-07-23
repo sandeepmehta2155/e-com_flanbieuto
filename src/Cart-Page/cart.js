@@ -92,33 +92,6 @@ export const Cart = () => {
         });
   }
 
-  // useEffect(() => {
-  //   if (username)
-  //     axios
-  //       .post("https://e-commerce.sandeepmehta215.repl.co/signup/cart", {
-  //         username: username
-  //       })
-  //       .then((resp) => {
-  //         if (typeof resp.data.cart === "object") {
-  //           localStorage.setItem(
-  //             "cartObj",
-  //             JSON.stringify({ cartObj: resp.data.cart })
-  //           );
-
-  //           setCart(resp.data.cart);
-
-  //           localStorage.setItem(
-  //             "cartlistLength",
-  //             JSON.stringify({ cartlistLength: resp.data.cart.length })
-  //           );
-  //           setPopUp("none");
-  //           setCartQuantity(resp.data.cart.length);
-  //         } else {
-  //           setCart([]);
-  //         }
-  //       });
-  // }, [popUp]);
-
   return (
     <>
       <div className="cartTotalQuantity">

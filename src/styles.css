@@ -867,15 +867,15 @@ h1 {
 /* CART PAGE */
 .cartCheckOut {
   border: lightgray 1px solid;
-  position: relative;
-  top: 12rem;
-  right: 5rem;
+  position: fixed;
+  top: 10rem;
+  right: 3rem;
   float: right;
   display: block;
   margin: 0rem;
   margin-bottom: 5rem;
   padding: 1rem;
-  width: 20%;
+  width: 30%;
 }
 .incButton,
 .decButton {
