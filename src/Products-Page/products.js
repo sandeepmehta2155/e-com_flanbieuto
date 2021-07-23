@@ -115,55 +115,6 @@ export const Products = () => {
     }
   }
 
-  // useEffect(() => {
-  //   if (username)
-  //     axios
-  //       .post("https://e-commerce.sandeepmehta215.repl.co/signup/wishlist", {
-  //         username: username
-  //       })
-  //       .then((resp) => {
-  //         if (typeof resp.data.wishlist === "object") {
-  //           localStorage.setItem(
-  //             "wishlistObj",
-  //             JSON.stringify({ wishlistObj: resp.data.wishlist })
-  //           );
-
-  //           setWishlist(resp.data.wishlist);
-  //           // setPopUp("none");
-
-  //           localStorage.setItem(
-  //             "wishlistLength",
-  //             JSON.stringify({ wishlistLength: resp.data.wishlist.length })
-  //           );
-
-  //           setWishListQuantity(resp.data.wishlist.length);
-  //         } else {
-  //           setWishlist([]);
-  //         }
-  //       });
-  // }, [popUp]);
-
-  // useEffect(() => {
-  //   if (username) {
-  //     axios
-  //       .post("https://e-commerce.sandeepmehta215.repl.co/signup/cart", {
-  //         username: username
-  //       })
-  //       .then((resp) => {
-  //         setPopUp("none");
-  //         if (typeof resp.data.cart === "object") {
-  //           setCartQuantity(resp.data.cart.length);
-
-  //           localStorage.setItem(
-  //             "cartlistLength",
-  //             JSON.stringify({ cartLength: resp.data.cart.length })
-  //           );
-  //         } else {
-  //         }
-  //       });
-  //   }
-  // }, [popUp]);
-
   return (
     <>
       <div className="cartTotalQuantity">

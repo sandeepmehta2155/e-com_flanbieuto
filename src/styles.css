@@ -230,6 +230,10 @@ h1 {
   background-color: transparent;
   border: transparent;
 }
+.LogInOutButton {
+  position: fixed;
+  right: 0.8rem;
+}
 /*HOME PAGE*/
 .featuredObjects,
 .bookBatches {
