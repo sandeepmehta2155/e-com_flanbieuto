@@ -1,11 +1,16 @@
 import * as useComponent from "../index";
-import { useCartAndWishlistQuantity } from "../Cart-Wishlist-Provider/cart-wishlist-provider";
 import { useAuth } from "../Login-Page/auth-context";
 
 export function Home() {
-  const { cartTotalQuantity, wishListQuantity } = useCartAndWishlistQuantity();
-
   const { isUserLoggedIn } = useAuth();
+
+  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
+    wishlistObj: []
+  };
+
+  const { cartlistObj } = JSON.parse(localStorage.getItem("cartlistObj")) || {
+    cartlistObj: []
+  };
 
   return (
     <>
@@ -17,10 +22,10 @@ export function Home() {
       {isUserLoggedIn && (
         <>
           <div className="cartTotalQuantity">
-            <strong>{cartTotalQuantity}</strong>
+            <strong>{cartlistObj.length}</strong>
           </div>
           <div className="wishListTotalQuantity">
-            <strong>{wishListQuantity}</strong>
+            <strong>{wishlistObj.length}</strong>
           </div>
         </>
       )}
