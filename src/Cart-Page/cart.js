@@ -44,7 +44,7 @@ export const Cart = () => {
       "https://e-commerce.sandeepmehta215.repl.co/updatecart/removefromcart",
       {
         username: username,
-        cartIDs: _id
+        cartids: _id
       }
     );
 
@@ -92,19 +92,11 @@ export const Cart = () => {
         <div className="cartDetails">
           <h2> Shopping Cart </h2>
 
-          {/* <div className="cartTotalQuantity">
-            <strong>{cartTotalQuantity}</strong>
-          </div>
-          <div className="wishListTotalQuantity">
-            <strong>{wishListQuantity}</strong>
-          </div> */}
-
           <div className="cartCheckOut">
             <h2>
               <strong>Check Out to here</strong>{" "}
             </h2>
             <h3>Cart Total Quantity : {quantity.cartquantity} </h3>
-            {/* <h3>Cart Total Price : {cartTotalPrice} </h3> */}
           </div>
 
           {quantity.cartquantity === 0 && (
@@ -139,8 +131,8 @@ export const Cart = () => {
                 <div key={obj.id}>
                   {cart
                     .map((cartObj) => {
-                      if (cartObj !== obj.id) return obj;
-                      return undefined;
+                      if (cartObj.cartid !== obj.id) return obj;
+                      // return undefined;
                     })
                     .filter((key) => key !== undefined).length < cart.length ? (
                     <li

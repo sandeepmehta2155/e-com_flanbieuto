@@ -109,7 +109,7 @@ export const WishList = () => {
       "https://e-commerce.sandeepmehta215.repl.co/updatewishlist/removefromwishlist",
       {
         username: username,
-        wishListIDs: _id
+        wishlistids: _id
       }
     );
 
