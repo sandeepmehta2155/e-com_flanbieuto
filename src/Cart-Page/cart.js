@@ -38,6 +38,60 @@ export const Cart = () => {
       progress: undefined
     });
 
+  async function DecrementCartItem(_id) {
+    notifyCart();
+    const response = await axios.post(
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/decrementcartitem",
+      {
+        username: username,
+        cartids: _id
+      }
+    );
+
+    if (typeof response.data.cart === "object") {
+      localStorage.setItem(
+        "cartlistObj",
+        JSON.stringify({ cartlistObj: response.data.cart })
+      );
+
+      localStorage.setItem(
+        "cartlistLength",
+        JSON.stringify({ cartLength: response.data.cart.length })
+      );
+      if (username) {
+        setQuantity({ ...quantity, cartquantity: response.data.cart.length });
+        setCart(response.data.cart);
+      }
+    }
+  }
+
+  async function IncrementCartItem(_id) {
+    notifyCart();
+    const response = await axios.post(
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/incrementcartitem",
+      {
+        username: username,
+        cartids: _id
+      }
+    );
+
+    if (typeof response.data.cart === "object") {
+      localStorage.setItem(
+        "cartlistObj",
+        JSON.stringify({ cartlistObj: response.data.cart })
+      );
+
+      localStorage.setItem(
+        "cartlistLength",
+        JSON.stringify({ cartLength: response.data.cart.length })
+      );
+      if (username) {
+        setQuantity({ ...quantity, cartquantity: response.data.cart.length });
+        setCart(response.data.cart);
+      }
+    }
+  }
+
   async function RemoveFromCart(_id) {
     notifyCart();
     const response = await axios.post(
@@ -176,13 +230,30 @@ export const Cart = () => {
                           </span>
                         </div>
                         <br />
-                        <button className="decButton" onClick={() => {}}>
+                        <button
+                          className="decButton"
+                          onClick={() => {
+                            DecrementCartItem(obj.id);
+                          }}
+                        >
                           -
                         </button>
-                        <button className="incButton" onClick={() => {}}>
+
+                        <button
+                          className="incButton"
+                          onClick={() => {
+                            IncrementCartItem(obj.id);
+                          }}
+                        >
                           +
                         </button>
-                        <div>Cart quantity : {obj.quantity} </div>
+                        <div>
+                          Cart quantity :
+                          {
+                            cart.find((cartObj) => cartObj.cartid === obj.id)
+                              .cartidquantity
+                          }
+                        </div>
                         <button
                           className="cartbi-trashButton"
                           onClick={() => {
