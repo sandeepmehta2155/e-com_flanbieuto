@@ -389,8 +389,8 @@ export const Product = () => {
                             alt="loading.."
                           />
                           {cart
-                            .map((wishlistObj) => {
-                              if (wishlistObj !== obj.id) return obj;
+                            .map((cartObj) => {
+                              if (cartObj.cartid !== obj.id) return obj;
                               // else return obj;
                             })
                             .filter((key) => key !== undefined).length <
