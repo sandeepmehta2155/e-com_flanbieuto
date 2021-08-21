@@ -54,10 +54,10 @@ export const WishList = () => {
   async function RemoveFromCart(_id) {
     notifyCart();
     const response = await axios.post(
-      "https://e-commerce.sandeepmehta215.repl.co/signup/removefromcart",
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/removefromcart",
       {
         username: username,
-        cartIDs: _id
+        cartids: _id
       }
     );
 
@@ -80,10 +80,10 @@ export const WishList = () => {
   async function AddToCart(_id) {
     notifyCart();
     const response = await axios.post(
-      "https://e-commerce.sandeepmehta215.repl.co/signup/addtocart",
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/addtocart",
       {
         username: username,
-        cartIDs: _id
+        cartids: _id
       }
     );
 
@@ -106,7 +106,7 @@ export const WishList = () => {
   async function RemoveFromWishlist(_id) {
     notifyWishlist();
     const response = await axios.post(
-      "https://e-commerce.sandeepmehta215.repl.co/signup/removefromwishlist",
+      "https://e-commerce.sandeepmehta215.repl.co/updatewishlist/removefromwishlist",
       {
         username: username,
         wishListIDs: _id
@@ -139,14 +139,14 @@ export const WishList = () => {
     () =>
       (async function () {
         const responseForWishlist = await axios.post(
-          "https://e-commerce.sandeepmehta215.repl.co/signup/wishlist",
+          "https://e-commerce.sandeepmehta215.repl.co/updatewishlist",
           {
             username: username
           }
         );
 
         const responseForCart = await axios.post(
-          "https://e-commerce.sandeepmehta215.repl.co/signup/cart",
+          "https://e-commerce.sandeepmehta215.repl.co/updatecart",
           {
             username: username
           }

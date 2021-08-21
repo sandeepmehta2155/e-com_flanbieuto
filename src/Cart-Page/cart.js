@@ -41,7 +41,7 @@ export const Cart = () => {
   async function RemoveFromCart(_id) {
     notifyCart();
     const response = await axios.post(
-      "https://e-commerce.sandeepmehta215.repl.co/signup/removefromcart",
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/removefromcart",
       {
         username: username,
         cartIDs: _id
@@ -69,7 +69,7 @@ export const Cart = () => {
     () =>
       (async function () {
         const responseForCart = await axios.post(
-          "https://e-commerce.sandeepmehta215.repl.co/signup/cart",
+          "https://e-commerce.sandeepmehta215.repl.co/updatecart",
           {
             username: username
           }
