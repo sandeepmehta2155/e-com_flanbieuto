@@ -232,14 +232,14 @@ export const WishList = () => {
               </Link>
             </div>
           )}
-          <div>
+          <ul>
             {itemsInProduct.map((obj) => {
               return (
-                <ul>
+                <li key={obj.id}>
                   {wishlist
                     .map((wishlistObj) => {
                       if (wishlistObj !== obj.id) return obj;
-                      // else return obj;
+                      return undefined;
                     })
                     .filter((key) => key !== undefined).length <
                   wishlist.length ? (
@@ -349,10 +349,10 @@ export const WishList = () => {
                   ) : (
                     <></>
                   )}
-                </ul>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </>
     </>

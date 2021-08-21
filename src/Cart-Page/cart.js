@@ -136,10 +136,11 @@ export const Cart = () => {
           <ul>
             {itemsInProduct.map((obj) => {
               return (
-                <div>
+                <div key={obj.id}>
                   {cart
                     .map((cartObj) => {
                       if (cartObj !== obj.id) return obj;
+                      return undefined;
                     })
                     .filter((key) => key !== undefined).length < cart.length ? (
                     <li

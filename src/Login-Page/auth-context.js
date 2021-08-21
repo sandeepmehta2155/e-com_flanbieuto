@@ -34,11 +34,10 @@ export function AuthProvider({ children }) {
   async function LoginUserWithCredentials(userName, passwordInput) {
     setUserExists("none");
     setCheckPassword("none");
+
     const response = await axios.get(
       `https://e-commerce.sandeepmehta215.repl.co/userauth/${userName}?password=${passwordInput}`
     );
-
-    console.log(response.data);
 
     if (response.data.message === "user auth is successful") {
       localStorage.setItem(
@@ -71,16 +70,17 @@ export function AuthProvider({ children }) {
           username: response.data.username
         })
       );
+
       setTimeout(() => {
         navigate("/products");
-      }, 800);
+      }, 1000);
     }
 
     response.data.message === "invalid username"
       ? setUserExists("block")
       : setUserExists("none");
 
-    response.data.message === "invalid password" || "wrong password"
+    response.data.message === "invalid password"
       ? setCheckPassword("block")
       : setCheckPassword("none");
   }
