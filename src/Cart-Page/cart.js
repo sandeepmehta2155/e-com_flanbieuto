@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useProd } from "../Products-Page/product-context";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -21,6 +21,8 @@ export const Cart = () => {
   };
 
   const [cart, setCart] = useState(cartlistObj);
+
+  const navigate = useNavigate();
 
   const [quantity, setQuantity] = useState({
     cartquantity: cartlistObj.length,
@@ -199,7 +201,7 @@ export const Cart = () => {
               <strong>PRICE DETAILS</strong>
             </div>
             <span className="lineAtCheckout">
-              ----------------------------------------------------------------------------------------------------------------
+              --------------------------------------------------------------------------------------------------------------
             </span>
             <br />
             <span className="displayPriceTagAtCheckout">
@@ -219,19 +221,26 @@ export const Cart = () => {
             <span className="amountDisplayedAtCheckout">FREE</span>
             <br />
             <span className="lineAtCheckout">
-              ----------------------------------------------------------------------------------------------------------------
+              --------------------------------------------------------------------------------------------------------------
             </span>
             <div>
               <strong>TOTAL AMOUNT </strong>
               <span className="amountDisplayedAtCheckout">Rs {totalPrice}</span>
             </div>
             <span className="lineAtCheckout">
-              ----------------------------------------------------------------------------------------------------------------
+              --------------------------------------------------------------------------------------------------------------
             </span>
             <br />
             <span>
               You will save Rs {originalPrice - totalPrice} on this order
             </span>
+            <br />
+            <button
+              className="cartCheckoutPlaceOrderButton"
+              onClick={() => navigate("/checkout")}
+            >
+              Place order
+            </button>
           </div>
 
           {quantity.cartquantity === 0 && (

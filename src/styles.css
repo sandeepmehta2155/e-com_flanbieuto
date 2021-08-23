@@ -3,6 +3,26 @@
 :root {
   --primary-color: purple;
   --secondary-color: #f8f8f8;
+  --color-grey-grade1: #f0f0f0;
+  --color-grey-grade2: #e0e0e0;
+  --color-grey-grade3: #c2c2c2;
+  --color-grey-grade4: #878787;
+  --color-grey-grade5: #212121;
+  --color-grey-grade6: #d7d7d7;
+  --color-grey-grade7: #f9f9f9;
+  --color-grey-grade8: #9e9e9e;
+  --color-grey-grade9: #efefef;
+  --color-grey-grade10: #f5f5f5;
+  --color-grey-grade11: #aaa;
+  --color-grey-grade12: #dbdbdb;
+  --color-grey-grade13: #fbfbfb;
+  --color-grey-grade14: #666;
+  --color-grey-grade15: #f8f8f8;
+  --color-grey-grade16: #eee;
+  --color-grey-grade17: #9b9b9b;
+  --color-grey-grade18: #686868;
+  --color-grey-grade19: #eaeaea;
+  --color-grey-grade20: #e6e6e6;
 }
 body {
   margin: auto;
@@ -877,14 +897,30 @@ h1 {
   margin-bottom: 5rem;
   padding: 1rem;
   width: 30%;
-  overflow: hidden;
-  overflow-inline: hidden;
 }
 
+.cartCheckoutPlaceOrderButton {
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 0;
+  height: 2.5rem;
+  margin: auto;
+  width: 80%;
+  color: black;
+  background-color: white;
+  border: lightgray 1px solid;
+  width: 100%;
+}
+
+.cartCheckoutPlaceOrderButton:hover {
+  box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
+}
 .amountDisplayedAtCheckout {
   float: right;
   margin-right: 2rem;
+  /* border-bottom: 1px solid var(--color-grey-grade1); */
 }
+
 .displayPriceTagAtCheckout {
   float: left;
 }
@@ -1073,6 +1109,42 @@ h1 {
   left: 0rem;
   cursor: pointer;
 }
+
+/* CART CHECKOUT PAGE */
+
+.paymentImg {
+  position: fixed;
+  top: 15rem;
+  right: 0rem;
+}
+
+.cartDetails input {
+  outline: none;
+  width: 60%;
+  cursor: pointer;
+  z-index: 0;
+  height: 2rem;
+  padding: 0.4rem;
+  margin: 1rem;
+  position: relative;
+  background-color: white;
+  border: var(--color-grey-grade2) 1px solid;
+}
+
+.addAddressButton {
+  width: 60%;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 0;
+  height: 2rem;
+  padding: 0.4rem;
+  background-color: var(--color-grey-grade15);
+  margin: 1rem;
+  position: relative;
+
+  border: var(--color-grey-grade2) 1px solid;
+}
+
 /* BOOK BATCHES*/
 .bookBatches {
   display: grid;
