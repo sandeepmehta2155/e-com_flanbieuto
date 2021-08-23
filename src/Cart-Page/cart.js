@@ -119,6 +119,7 @@ export const Cart = () => {
     }
   }
 
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(
     () =>
       (async function () {
@@ -145,12 +146,31 @@ export const Cart = () => {
       <>
         <div className="cartDetails">
           <h2> Shopping Cart </h2>
-
           <div className="cartCheckOut">
-            <h2>
-              <strong>Check Out to here</strong>{" "}
-            </h2>
-            <h3>Cart Total Quantity : {quantity.cartquantity} </h3>
+            <div>
+              <strong>PRICE DETAILS</strong>
+            </div>
+            <span>
+              --------------------------------------------------------
+            </span>
+            <br />
+            <span>Price ({quantity.cartquantity} items) </span>
+            <br />
+            <span>Discount </span> <br />
+            <span>Delivery Charges</span>
+            {console.log(cart)}
+            <br />
+            <span>
+              --------------------------------------------------------
+            </span>
+            <div>
+              <strong>TOTAL AMOUNT </strong>
+            </div>
+            <span>
+              --------------------------------------------------------
+            </span>
+            <br />
+            <span>You will save on this order</span>
           </div>
 
           {quantity.cartquantity === 0 && (
