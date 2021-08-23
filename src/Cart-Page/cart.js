@@ -120,7 +120,9 @@ export const Cart = () => {
   }
 
   const [totalPrice, setTotalPrice] = useState(0);
-  const [setPriceArray, setTotalPriceArray] = useState([]);
+  const [totalPriceArray, setTotalPriceArray] = useState([]);
+  const [originalPriceArray, setOriginalPriceArray] = useState([]);
+  const [originalPrice, setOriginalPrice] = useState(0);
 
   useEffect(() => {
     setTotalPriceArray(
@@ -137,12 +139,33 @@ export const Cart = () => {
       })
     );
 
+    setOriginalPriceArray(
+      itemsInProduct.map((obj) => {
+        return cart
+          .map((cartObj) => {
+            if (cartObj.cartid !== obj.id) return obj;
+            return undefined;
+          })
+          .filter((key) => key !== undefined).length < cart.length
+          ? obj.Originalprice *
+              cart.find((cartObj) => cartObj.cartid === obj.id).cartidquantity
+          : 0;
+      })
+    );
+
+    setOriginalPrice(0);
     setTotalPrice(0);
   }, [cart]);
 
   useEffect(() => {
-    setPriceArray.map((key) => setTotalPrice((totalPrice) => totalPrice + key));
-  }, [setPriceArray]);
+    totalPriceArray.map((key) =>
+      setTotalPrice((totalPrice) => totalPrice + key)
+    );
+
+    originalPriceArray.map((key) =>
+      setOriginalPrice((originalPrice) => originalPrice + key)
+    );
+  }, [totalPriceArray]);
 
   useEffect(
     () =>
@@ -175,28 +198,40 @@ export const Cart = () => {
             <div>
               <strong>PRICE DETAILS</strong>
             </div>
-            <span>
-              --------------------------------------------------------
+            <span className="lineAtCheckout">
+              ----------------------------------------------------------------------------------------------------------------
             </span>
             <br />
-            <span>
-              Price ({quantity.cartquantity} items) {totalPrice}
+            <span className="displayPriceTagAtCheckout">
+              Price ({quantity.cartquantity} items)
+            </span>
+            <span className="amountDisplayedAtCheckout">
+              Rs {originalPrice}
             </span>
             <br />
-            <span>Discount </span> <br />
-            <span>Delivery Charges</span>
+            <span className="displayPriceTagAtCheckout">Discount </span>{" "}
+            <span className="amountDisplayedAtCheckout">
+              {" "}
+              - Rs {originalPrice - totalPrice}
+            </span>
             <br />
-            <span>
-              --------------------------------------------------------
+            <span className="displayPriceTagAtCheckout">Delivery Charges</span>
+            <span className="amountDisplayedAtCheckout">FREE</span>
+            <br />
+            <span className="lineAtCheckout">
+              ----------------------------------------------------------------------------------------------------------------
             </span>
             <div>
               <strong>TOTAL AMOUNT </strong>
+              <span className="amountDisplayedAtCheckout">Rs {totalPrice}</span>
             </div>
-            <span>
-              --------------------------------------------------------
+            <span className="lineAtCheckout">
+              ----------------------------------------------------------------------------------------------------------------
             </span>
             <br />
-            <span>You will save on this order</span>
+            <span>
+              You will save Rs {originalPrice - totalPrice} on this order
+            </span>
           </div>
 
           {quantity.cartquantity === 0 && (

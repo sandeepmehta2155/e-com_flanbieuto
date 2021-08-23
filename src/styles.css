@@ -865,7 +865,7 @@ h1 {
   border: #000 1px solid;
 }
 
-/* CART PAGE */
+/*Price Details BOX */
 .cartCheckOut {
   border: lightgray 1px solid;
   position: fixed;
@@ -877,7 +877,24 @@ h1 {
   margin-bottom: 5rem;
   padding: 1rem;
   width: 30%;
+  overflow: hidden;
+  overflow-inline: hidden;
 }
+
+.amountDisplayedAtCheckout {
+  float: right;
+  margin-right: 2rem;
+}
+.displayPriceTagAtCheckout {
+  float: left;
+}
+
+.lineAtCheckout {
+  color: lightgray;
+}
+
+/* CART PAGE */
+
 .incButton,
 .decButton {
   width: 28px;
