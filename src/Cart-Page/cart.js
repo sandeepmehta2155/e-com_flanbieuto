@@ -120,6 +120,30 @@ export const Cart = () => {
   }
 
   const [totalPrice, setTotalPrice] = useState(0);
+  const [setPriceArray, setTotalPriceArray] = useState([]);
+
+  useEffect(() => {
+    setTotalPriceArray(
+      itemsInProduct.map((obj) => {
+        return cart
+          .map((cartObj) => {
+            if (cartObj.cartid !== obj.id) return obj;
+            return undefined;
+          })
+          .filter((key) => key !== undefined).length < cart.length
+          ? obj.price *
+              cart.find((cartObj) => cartObj.cartid === obj.id).cartidquantity
+          : 0;
+      })
+    );
+
+    setTotalPrice(0);
+  }, [cart]);
+
+  useEffect(() => {
+    setPriceArray.map((key) => setTotalPrice((totalPrice) => totalPrice + key));
+  }, [setPriceArray]);
+
   useEffect(
     () =>
       (async function () {
@@ -143,6 +167,7 @@ export const Cart = () => {
         <strong>{quantity.wishlistquantity}</strong>
       </div>
       <ToastContainer />
+
       <>
         <div className="cartDetails">
           <h2> Shopping Cart </h2>
@@ -154,11 +179,12 @@ export const Cart = () => {
               --------------------------------------------------------
             </span>
             <br />
-            <span>Price ({quantity.cartquantity} items) </span>
+            <span>
+              Price ({quantity.cartquantity} items) {totalPrice}
+            </span>
             <br />
             <span>Discount </span> <br />
             <span>Delivery Charges</span>
-            {console.log(cart)}
             <br />
             <span>
               --------------------------------------------------------
@@ -225,7 +251,7 @@ export const Cart = () => {
 
                         <br />
                         <div>
-                          Rs {obj.price}
+                          Rs {obj.price} {"   "}
                           <span>
                             <s>Rs {obj.Originalprice}</s>
                           </span>
@@ -243,7 +269,7 @@ export const Cart = () => {
                                 <path
                                   d="M7 0C3.136 0 0 3.136 0 7s3.136 7 7 7 7-3.136 7-7-3.136-7-7-7zm.7 10.5H6.3V6.3h1.4v4.2zm0-5.6H6.3V3.5h1.4v1.4z"
                                   fill="#388e3c"
-                                  class=""
+                                  className=""
                                 ></path>
                               </g>
                             </svg>
