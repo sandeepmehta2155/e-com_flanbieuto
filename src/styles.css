@@ -1131,7 +1131,7 @@ h1 {
   border: var(--color-grey-grade2) 1px solid;
 }
 
-.addAddressButton {
+.payNowButton {
   width: 60%;
   cursor: pointer;
   padding: 1rem;
