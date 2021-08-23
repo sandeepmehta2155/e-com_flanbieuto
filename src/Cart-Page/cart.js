@@ -235,6 +235,7 @@ export const Cart = () => {
               You will save Rs {originalPrice - totalPrice} on this order
             </span>
             <br />
+            <br />
             <button
               className="cartCheckoutPlaceOrderButton"
               onClick={() => navigate("/checkout")}
