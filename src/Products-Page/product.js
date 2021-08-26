@@ -284,6 +284,35 @@ export const Product = () => {
               />
             </span>
             <ToastContainer />
+            {itemsInProduct.length === 0 && (
+              <>
+                <div className="containerForProductSkeleton">
+                  <div className="post">
+                    <div className="man"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                  </div>
+
+                  <div className="post">
+                    <div className="man"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                  </div>
+
+                  <div className="post">
+                    <div className="man"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                  </div>
+
+                  <div className="post">
+                    <div className="man"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                  </div>
+                </div>
+              </>
+            )}
             <ul className="productList">
               {itemsInProduct
                 .filter((obj) => {
