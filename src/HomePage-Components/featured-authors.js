@@ -9,7 +9,7 @@ export function FeaturedAuthors() {
         <h1> Featured India Authors </h1>
         {FeaturedAuthors.length === 0 && (
           <>
-            <h2> Loading ... </h2>
+            <h1> Loading... </h1> <br /> <br />
             <div class="container">
               <div class="wrapper">
                 <div class="loader">
@@ -47,7 +47,7 @@ export function FeaturedAuthors() {
         <h1> Featured International Authors </h1>
         {FeaturedAuthors.length === 0 && (
           <>
-            <h2> Loading ... </h2>
+            <h1> Loading... </h1> <br /> <br />
             <div class="container">
               <div class="wrapper">
                 <div class="loader">
@@ -85,7 +85,7 @@ export function FeaturedAuthors() {
         <h1> Featured Series</h1>
         {FeaturedSeries.length === 0 && (
           <>
-            <h2> Loading ... </h2>
+            <h1> Loading... </h1> <br /> <br />
             <div class="container">
               <div class="wrapper">
                 <div class="loader">

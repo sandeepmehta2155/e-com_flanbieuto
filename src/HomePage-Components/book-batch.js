@@ -7,7 +7,7 @@ export function BookBatches() {
     <div className="bookBatches">
       {img.length === 0 && (
         <>
-          <h2> Loading ... </h2>
+          <h1> Loading... </h1> <br /> <br />
           <div class="container">
             <div class="wrapper">
               <div class="loader">
