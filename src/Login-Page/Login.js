@@ -22,6 +22,10 @@ export function Login() {
     cartlistObj: []
   };
 
+  const { username } = JSON.parse(localStorage.getItem("username")) || {
+    username: null
+  };
+
   function LoginHandler() {
     return isUserLoggedIn
       ? LogOut()
@@ -75,7 +79,6 @@ export function Login() {
         onChange={(e) => setUserPassword(e.target.value)}
       />
       <br />
-      <br />
 
       <small style={{ color: "red", display: checkPassword }}>
         Enter Correct Password
@@ -99,15 +102,7 @@ export function Login() {
       >
         Login as Guest ?
       </span>
-
-      {isUserLoggedIn && (
-        <span style={{ color: "green" }}>
-          User Logged in successfully
-          <span role="img" aria-labelledby="emoji">
-            ✅
-          </span>
-        </span>
-      )}
+      <br />
     </div>
   );
 }
