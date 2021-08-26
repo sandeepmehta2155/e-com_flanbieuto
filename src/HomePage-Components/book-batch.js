@@ -5,7 +5,7 @@ export function BookBatches() {
 
   return (
     <div className="bookBatches">
-      {img ? (
+      {img.length !== 0 ? (
         img.map((obj) => (
           <img className="bookBatchPills" src={obj} alt="loading" key={obj} />
         ))
