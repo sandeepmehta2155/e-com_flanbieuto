@@ -29,7 +29,7 @@ export function Login() {
   }
 
   return (
-    <div className="modalForLogin">
+    <div className="loginPage">
       {isUserLoggedIn && (
         <>
           <div className="cartTotalQuantity">
@@ -52,8 +52,8 @@ export function Login() {
       )}
       <h2>Login</h2>
 
-      <label>Enter your user-name : </label>
       <input
+        className="userLoginInput"
         type="text"
         id="txt"
         placeholder="    User name"
@@ -61,15 +61,13 @@ export function Login() {
         onChange={(e) => setUserName(e.target.value)}
       />
       <br />
-      <br />
 
       <small style={{ color: "red", display: userExists }}>
         User doesn't exists
       </small>
 
-      <br />
-      <label> Enter your password : </label>
       <input
+        className="passWordInput"
         type="password"
         id="email"
         placeholder="     Password"
@@ -93,16 +91,14 @@ export function Login() {
         <button className="SignupButton">Sign Up</button>
       </Link>
       <br />
-      <button
-        className="LoginButton"
+      <span
         onClick={() => {
           setUserName("guest");
           setUserPassword("guest@123");
         }}
       >
-        {" "}
-        Login as Guest{" "}
-      </button>
+        Login as Guest ?
+      </span>
 
       {isUserLoggedIn && (
         <span style={{ color: "green" }}>

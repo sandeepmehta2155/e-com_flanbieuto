@@ -1323,43 +1323,26 @@ h1 {
 
 /*LOGIN PAGE*/
 
-.modalForLogin,
-.feedbackPage,
+.loginPage,
 .signUpPage {
   position: relative;
   top: 8rem;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   text-align: center;
   margin: auto;
-  width: 40%;
+  width: 30%;
   margin-bottom: 10rem;
 }
 
-.modal1,
-.signUpPage input {
-  float: right;
-  margin-right: 30%;
-}
-.modal1,
-.signUpPage #check {
-  float: left;
-  margin: 0.255rem;
-  margin-left: 1rem;
-}
-.modal1,
-.signUpPage label,
-.feedbackPage label {
-  float: left;
-  margin-left: 20%;
+.userLoginInput,
+.passWordInput {
+  border: 1px lightgray solid;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-top: 0.5rem;
 }
 
 /*SIGNUP PAGE*/
-.signUpPage label {
-  margin-left: 10%;
-}
-.signUpPage input {
-  margin-right: 20%;
-}
 
 /*FEEDBACK PAGE*/
 .feedbackPage {
@@ -2038,8 +2021,7 @@ h1 {
     cursor: pointer;
   }
   /*LOGIN PAGE*/
-  .modalForLogin,
-  .feedbackPage,
+  .loginPage,
   .signUpPage {
     position: relative;
     top: 12rem;
