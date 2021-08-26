@@ -5,17 +5,15 @@ export function BookBatches() {
 
   return (
     <div className="bookBatches">
-      {img.map((obj) =>
-        img.length !== 0 ? (
-          <img className="bookBatchPills" src={obj} alt="loading" key={obj} />
-        ) : (
-          <img
-            className="bookBatchPills"
-            src="https://as1.ftcdn.net/jpg/02/01/18/68/500_F_201186834_NLRQImmmfLmOHEQpQPXB6wh4F4quHloV.jpg"
-            alt="loading"
-          />
-        )
+      {img.length === 0 && (
+        <>
+          <br />
+          <br /> <h1> Loading ... </h1> <br /> <br />
+        </>
       )}
+      {img.map((obj) => (
+        <img className="bookBatchPills" src={obj} alt="loading" key={obj} />
+      ))}
     </div>
   );
 }
