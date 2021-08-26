@@ -57,6 +57,7 @@ export function Login() {
         type="text"
         id="txt"
         placeholder="    User name"
+        value={userName}
         onChange={(e) => setUserName(e.target.value)}
       />
       <br />
@@ -72,6 +73,7 @@ export function Login() {
         type="password"
         id="email"
         placeholder="     Password"
+        value={passwordInput}
         onChange={(e) => setUserPassword(e.target.value)}
       />
       <br />
@@ -91,6 +93,16 @@ export function Login() {
         <button className="SignupButton">Sign Up</button>
       </Link>
       <br />
+      <button
+        className="LoginButton"
+        onClick={() => {
+          setUserName("guest");
+          setUserPassword("guest@123");
+        }}
+      >
+        {" "}
+        Login as Guest{" "}
+      </button>
 
       {isUserLoggedIn && (
         <span style={{ color: "green" }}>
