@@ -8,43 +8,39 @@ export function FeaturedAuthors() {
       <div className="featuredObjects">
         <h1> Featured India Authors </h1>
         <ul className="img-group">
-          {FeaturedAuthors.length !== 0 ? (
-            FeaturedAuthors.map((obj) => {
-              return (
-                obj.nation === "India" && (
-                  <li key={obj.icon} className="list list-group-item">
-                    <img className="circle" alt="loading" src={obj.icon} />
-                  </li>
-                )
-              );
-            })
-          ) : (
-            <img
-              className="bookBatchPills"
-              src="https://as1.ftcdn.net/jpg/02/01/18/68/500_F_201186834_NLRQImmmfLmOHEQpQPXB6wh4F4quHloV.jpg"
-              alt="loading"
-            />
-          )}
+          {FeaturedAuthors.map((obj) => {
+            return FeaturedAuthors.length !== 0 ? (
+              obj.nation === "India" && (
+                <li key={obj.icon} className="list list-group-item">
+                  <img className="circle" alt="loading" src={obj.icon} />
+                </li>
+              )
+            ) : (
+              <img
+                className="bookBatchPills"
+                src="https://as1.ftcdn.net/jpg/02/01/18/68/500_F_201186834_NLRQImmmfLmOHEQpQPXB6wh4F4quHloV.jpg"
+                alt="loading"
+              />
+            );
+          })}
         </ul>
         <h1> Featured International Authors </h1>
         <ul className="img-group">
-          {FeaturedAuthors.length !== 0 ? (
-            FeaturedAuthors.map((obj) => {
-              return (
-                obj.nation !== "India" && (
-                  <li key={obj.icon} className="list list-group-item">
-                    <img className="circle" alt="loading" src={obj.icon} />
-                  </li>
-                )
-              );
-            })
-          ) : (
-            <img
-              className="bookBatchPills"
-              src="https://as1.ftcdn.net/jpg/02/01/18/68/500_F_201186834_NLRQImmmfLmOHEQpQPXB6wh4F4quHloV.jpg"
-              alt="loading"
-            />
-          )}
+          {FeaturedAuthors.map((obj) => {
+            return FeaturedAuthors.length !== 0 ? (
+              obj.nation !== "India" && (
+                <li key={obj.icon} className="list list-group-item">
+                  <img className="circle" alt="loading" src={obj.icon} />
+                </li>
+              )
+            ) : (
+              <img
+                className="bookBatchPills"
+                src="https://as1.ftcdn.net/jpg/02/01/18/68/500_F_201186834_NLRQImmmfLmOHEQpQPXB6wh4F4quHloV.jpg"
+                alt="loading"
+              />
+            );
+          })}
         </ul>
         <h1> Featured Series</h1>
         <ul className="img-group">
