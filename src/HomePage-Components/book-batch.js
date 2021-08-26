@@ -7,8 +7,29 @@ export function BookBatches() {
     <div className="bookBatches">
       {img.length === 0 && (
         <>
-          <br />
-          <br /> <h1> Loading ... </h1> <br /> <br />
+          <h2> Loading ... </h2>
+          <div class="container">
+            <div class="wrapper">
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+              <div class="loader">
+                <div class="dot"></div>
+              </div>
+            </div>
+          </div>
         </>
       )}
       {img.map((obj) => (
