@@ -8,7 +8,7 @@ export function FeaturedAuthors() {
       <div className="featuredObjects">
         <h1> Featured India Authors </h1>
         <ul className="img-group">
-          {FeaturedAuthors ? (
+          {FeaturedAuthors.length !== 0 ? (
             FeaturedAuthors.map((obj) => {
               return (
                 obj.nation === "India" && (
@@ -28,7 +28,7 @@ export function FeaturedAuthors() {
         </ul>
         <h1> Featured International Authors </h1>
         <ul className="img-group">
-          {FeaturedAuthors ? (
+          {FeaturedAuthors.length !== 0 ? (
             FeaturedAuthors.map((obj) => {
               return (
                 obj.nation !== "India" && (
