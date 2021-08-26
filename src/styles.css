@@ -1155,6 +1155,7 @@ h1 {
 .bookBatchPills {
   width: 95%;
   border: none;
+  margin: auto;
 }
 
 .img-group {
