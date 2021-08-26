@@ -22,10 +22,6 @@ export function Login() {
     cartlistObj: []
   };
 
-  const { username } = JSON.parse(localStorage.getItem("username")) || {
-    username: null
-  };
-
   function LoginHandler() {
     return isUserLoggedIn
       ? LogOut()
