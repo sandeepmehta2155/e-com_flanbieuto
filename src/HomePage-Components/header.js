@@ -17,7 +17,9 @@ export function Header() {
   return (
     <>
       <header>
-        <span className="name">Fincom</span>
+        <span className="name" onClick={() => navigate("/")}>
+          Fincom
+        </span>
 
         <br />
         <Link to="/">
