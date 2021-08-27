@@ -182,7 +182,7 @@ export const WishList = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-wind"
+                className="bi bi-wind"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z" />
@@ -212,7 +212,7 @@ export const WishList = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-wind"
+                className="bi bi-wind"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z" />
@@ -272,7 +272,7 @@ export const WishList = () => {
                                 <path
                                   d="M7 0C3.136 0 0 3.136 0 7s3.136 7 7 7 7-3.136 7-7-3.136-7-7-7zm.7 10.5H6.3V6.3h1.4v4.2zm0-5.6H6.3V3.5h1.4v1.4z"
                                   fill="#388e3c"
-                                  class=""
+                                  className=""
                                 ></path>
                               </g>
                             </svg>
@@ -282,7 +282,7 @@ export const WishList = () => {
                         {cart
                           .map((cartObj) => {
                             if (cartObj.cartid !== obj.id) return obj;
-                            // else return obj;
+                            return undefined;
                           })
                           .filter((key) => key !== undefined).length <
                         cart.length ? (

@@ -19,26 +19,16 @@ export function Home() {
         alt="loading..."
         className="ImgHomePage"
       />
-      {isUserLoggedIn && (
-        <>
-          <div className="cartTotalQuantity">
-            <strong>{cartlistObj.length}</strong>
-          </div>
-          <div className="wishListTotalQuantity">
-            <strong>{wishlistObj.length}</strong>
-          </div>
-        </>
-      )}
-      {!isUserLoggedIn && (
-        <>
-          <div className="cartTotalQuantity">
-            <strong>0</strong>
-          </div>
-          <div className="wishListTotalQuantity">
-            <strong>0</strong>
-          </div>
-        </>
-      )}
+
+      <>
+        <div className="cartTotalQuantity">
+          <strong>{isUserLoggedIn ? cartlistObj.length : 0}</strong>
+        </div>
+        <div className="wishListTotalQuantity">
+          <strong>{isUserLoggedIn ? wishlistObj.length : 0}</strong>
+        </div>
+      </>
+
       <useComponent.FeaturedAuthors />
       <useComponent.BookBatches />
     </>

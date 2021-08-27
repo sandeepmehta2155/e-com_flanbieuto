@@ -8,25 +8,25 @@ export function BookBatches() {
       {img.length === 0 && (
         <>
           <h1> Loading... </h1> <br /> <br />
-          <div class="container">
-            <div class="wrapper">
-              <div class="loader">
-                <div class="dot"></div>
+          <div className="container">
+            <div className="wrapper">
+              <div className="loader">
+                <div className="dot"></div>
               </div>
-              <div class="loader">
-                <div class="dot"></div>
+              <div className="loader">
+                <div className="dot"></div>
               </div>
-              <div class="loader">
-                <div class="dot"></div>
+              <div className="loader">
+                <div className="dot"></div>
               </div>
-              <div class="loader">
-                <div class="dot"></div>
+              <div className="loader">
+                <div className="dot"></div>
               </div>
-              <div class="loader">
-                <div class="dot"></div>
+              <div className="loader">
+                <div className="dot"></div>
               </div>
-              <div class="loader">
-                <div class="dot"></div>
+              <div className="loader">
+                <div className="dot"></div>
               </div>
             </div>
           </div>

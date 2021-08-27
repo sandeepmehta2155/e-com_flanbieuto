@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import { useAuth } from "./auth-context";
 
 export function Login() {
-  const [passwordInput, setUserPassword] = useState("");
   const {
-    isUserLoggedIn,
     LogOut,
     LoginUserWithCredentials,
     userExists,
-    checkPassword
+    checkPassword,
+    isUserLoggedIn
   } = useAuth();
 
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState("");
+  const [passwordInput, setUserPassword] = useState("");
 
   const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
     wishlistObj: []
@@ -23,6 +23,7 @@ export function Login() {
   };
 
   function LoginHandler() {
+    console.log(isUserLoggedIn);
     return isUserLoggedIn
       ? LogOut()
       : LoginUserWithCredentials(userName, passwordInput);
@@ -30,28 +31,15 @@ export function Login() {
 
   return (
     <div className="loginPage">
-      {isUserLoggedIn && (
-        <>
-          <div className="cartTotalQuantity">
-            <strong>{cartlistObj.length}</strong>
-          </div>
-          <div className="wishListTotalQuantity">
-            <strong>{wishlistObj.length}</strong>
-          </div>
-        </>
-      )}
-      {!isUserLoggedIn && (
-        <>
-          <div className="cartTotalQuantity">
-            <strong>0</strong>
-          </div>
-          <div className="wishListTotalQuantity">
-            <strong>0</strong>
-          </div>
-        </>
-      )}
+      <>
+        <div className="cartTotalQuantity">
+          <strong>{isUserLoggedIn ? cartlistObj.length : 0}</strong>
+        </div>
+        <div className="wishListTotalQuantity">
+          <strong>{isUserLoggedIn ? wishlistObj.length : 0}</strong>
+        </div>
+      </>
       <h2>Login</h2>
-
       <input
         className="userLoginInput"
         type="text"
@@ -61,11 +49,9 @@ export function Login() {
         onChange={(e) => setUserName(e.target.value)}
       />
       <br />
-
       <small style={{ color: "red", display: userExists }}>
         User doesn't exists
       </small>
-
       <input
         className="passWordInput"
         type="password"
@@ -75,21 +61,9 @@ export function Login() {
         onChange={(e) => setUserPassword(e.target.value)}
       />
       <br />
-
       <small style={{ color: "red", display: checkPassword }}>
         Enter Correct Password
       </small>
-
-      <br />
-
-      <button className="LoginButton" onClick={LoginHandler}>
-        {isUserLoggedIn ? "Logout" : "Login"}
-      </button>
-
-      <Link to="/subscription">
-        <button className="SignupButton">Sign Up</button>
-      </Link>
-      <br />
       <span
         onClick={() => {
           setUserName("guest");
@@ -97,7 +71,14 @@ export function Login() {
         }}
       >
         Login as Guest ?
-      </span>
+      </span>{" "}
+      <br />
+      <button className="LoginButton" onClick={LoginHandler}>
+        Login
+      </button>
+      <Link to="/subscription">
+        <button className="SignupButton">Sign Up</button>
+      </Link>
       <br />
     </div>
   );
