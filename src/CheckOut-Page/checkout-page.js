@@ -6,6 +6,14 @@ export const CheckoutPage = () => {
   const navigate = useNavigate();
   const inputEl = useRef(null);
 
+  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
+    wishlistObj: []
+  };
+
+  const { cartlistObj } = JSON.parse(localStorage.getItem("cartlistObj")) || {
+    cartlistObj: []
+  };
+
   const onButtonClick = () => {
     // `current` points to the mounted text input element
     inputEl.current.focus();
@@ -13,6 +21,14 @@ export const CheckoutPage = () => {
 
   return (
     <>
+      <>
+        <div className="cartTotalQuantity">
+          <strong>{cartlistObj.length}</strong>
+        </div>
+        <div className="wishListTotalQuantity">
+          <strong>{wishlistObj.length}</strong>
+        </div>
+      </>
       <div className="cartDetails">
         <h2> Card Details </h2>
         <input placeholder="Debit /Credit card no. *" ref={inputEl} />

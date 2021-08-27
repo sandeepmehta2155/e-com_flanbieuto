@@ -23,7 +23,6 @@ export function Login() {
   };
 
   function LoginHandler() {
-    console.log(isUserLoggedIn);
     return isUserLoggedIn
       ? LogOut()
       : LoginUserWithCredentials(userName, passwordInput);

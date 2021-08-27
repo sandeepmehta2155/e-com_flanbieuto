@@ -235,7 +235,7 @@ export const WishList = () => {
           <ul>
             {itemsInProduct.map((obj) => {
               return (
-                <ul>
+                <ul key={obj.id}>
                   {wishlist
                     .map((wishlistObj) => {
                       if (wishlistObj !== obj.id) return obj;

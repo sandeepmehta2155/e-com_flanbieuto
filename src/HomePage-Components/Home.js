@@ -1,9 +1,6 @@
 import * as useComponent from "../index";
-import { useAuth } from "../Login-Page/auth-context";
 
 export function Home() {
-  const { isUserLoggedIn } = useAuth();
-
   const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
     wishlistObj: []
   };
@@ -22,10 +19,10 @@ export function Home() {
 
       <>
         <div className="cartTotalQuantity">
-          <strong>{isUserLoggedIn ? cartlistObj.length : 0}</strong>
+          <strong>{cartlistObj.length}</strong>
         </div>
         <div className="wishListTotalQuantity">
-          <strong>{isUserLoggedIn ? wishlistObj.length : 0}</strong>
+          <strong>{wishlistObj.length}</strong>
         </div>
       </>
 
