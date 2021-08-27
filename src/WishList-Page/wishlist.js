@@ -314,12 +314,7 @@ export const WishList = () => {
                             RemoveFromWishlist(obj.id);
                           }}
                         >
-                          <span
-                            className="love active"
-                            onClick={() => {
-                              RemoveFromWishlist(obj.id);
-                            }}
-                          >
+                          <span className="love active">
                             <span className="drop"></span>
                             <span className="drop"></span>
                             <span className="drop"></span>
