@@ -17,7 +17,7 @@ export function Header() {
   return (
     <>
       <header>
-        <span className="name">Flanbieuto</span>
+        <span className="name">Fincom</span>
 
         <br />
         <Link to="/">
