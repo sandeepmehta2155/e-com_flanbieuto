@@ -1567,7 +1567,7 @@ h1 {
 @media (max-width: 670px) {
   header {
     position: fixed;
-    height: 8rem;
+    height: 6rem;
     padding-inline-start: 0px;
   }
   footer {
@@ -1584,7 +1584,7 @@ h1 {
   .headerHomeComponent,
   .headerProductComponent {
     position: fixed;
-    top: 5.5rem;
+    top: 4rem;
     right: 15vh;
     font-size: 1rem;
     /* margin-right: 3rem; */
