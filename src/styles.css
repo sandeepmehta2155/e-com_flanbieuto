@@ -308,8 +308,8 @@ h1 {
   height: 35px;
   z-index: 999;
   border-radius: 50%;
+  cursor: pointer;
   border: none;
-  /* width: 5rem; */
   position: relative;
   top: 0px;
   right: 12px;
@@ -319,7 +319,8 @@ h1 {
   width: 20px;
   height: 20px;
   background-color: none;
-  /* display: block; */
+
+  cursor: pointer;
   position: relative;
   z-index: 1;
 }
@@ -926,6 +927,10 @@ h1 {
   border: lightgray 1px solid;
   width: 100%;
 }
+.cartCheckoutPlaceOrderButton a {
+  text-decoration: none;
+  color: black;
+}
 
 .cartCheckoutPlaceOrderButton:hover {
   box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
@@ -1266,6 +1271,9 @@ h1 {
   width: 30%;
   margin-bottom: 10rem;
 }
+.loginPage span {
+  cursor: pointer;
+}
 
 .userLoginInput,
 .passWordInput {
@@ -1522,6 +1530,7 @@ h1 {
   }
   .name {
     font-size: 1.4rem;
+    cursor: pointer;
     left: 1rem;
   }
   .headerHomeComponent,
@@ -1964,6 +1973,7 @@ h1 {
     width: 90%;
     margin-bottom: 15rem;
   }
+
   /* REDIRECT PAGE*/
   .redirectImage {
     width: 95%;

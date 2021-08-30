@@ -23,7 +23,6 @@ export { Cart } from "./Cart-Page/cart";
 export { WishList } from "./WishList-Page/wishlist";
 export { UserProfile } from "./UserProfile-Page/userprofile";
 export { PrivateRoute } from "./UserProfile-Page/PrivateRoute";
-export { CheckoutPage } from "./CheckOut-Page/checkout-page";
 export { RouteComponents } from "./Router-Components/Route-Components";
 
 const rootElement = document.getElementById("root");
