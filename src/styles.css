@@ -1801,8 +1801,8 @@ h1 {
   .keepInTouch {
     position: relative;
     width: 9rem;
-    left: -6rem;
-    top: 11rem;
+    left: 1rem;
+    top: 0rem;
   }
   .bi-twitter,
   .bi-linkedin,
