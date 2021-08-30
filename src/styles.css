@@ -1120,6 +1120,10 @@ h1 {
   border: #000 1px solid;
 }
 
+.AddItemsFromWishlist {
+  width: 13rem;
+}
+
 .LoginButton:hover,
 .LogOutButton:hover,
 .SignupButton:hover,
