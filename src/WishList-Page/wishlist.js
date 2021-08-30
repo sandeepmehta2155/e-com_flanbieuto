@@ -24,11 +24,6 @@ export const WishList = () => {
 
   const [cart, setCart] = useState(cartlistObj);
 
-  const [quantity, setQuantity] = useState({
-    cartquantity: cartlistObj.length,
-    wishlistquantity: wishlistObj.length
-  });
-
   const notifyCart = () =>
     toast.success("Updating Cart", {
       position: "bottom-center",
@@ -73,7 +68,6 @@ export const WishList = () => {
       JSON.stringify({ cartLength: response.data.cart.length })
     );
 
-    setQuantity({ ...quantity, cartquantity: response.data.cart.length });
     setCart(response.data.cart);
   }
 
@@ -99,7 +93,6 @@ export const WishList = () => {
       JSON.stringify({ cartLength: response.data.cart.length })
     );
 
-    setQuantity({ ...quantity, cartquantity: response.data.cart.length });
     setCart(response.data.cart);
   }
 
@@ -120,11 +113,6 @@ export const WishList = () => {
       );
 
       setWishlist(response.data.wishlist);
-
-      setQuantity({
-        ...quantity,
-        wishlistquantity: response.data.wishlist.length
-      });
 
       localStorage.setItem(
         "wishlistLength",
@@ -161,12 +149,6 @@ export const WishList = () => {
 
   return (
     <>
-      <div className="cartTotalQuantity">
-        <strong>{quantity.cartquantity}</strong>
-      </div>
-      <div className="wishListTotalQuantity">
-        <strong>{quantity.wishlistquantity}</strong>
-      </div>
       <ToastContainer />
       <>
         <div className="wishListPage">
@@ -202,7 +184,7 @@ export const WishList = () => {
               </Link>
             </div>
           )}
-          {username && quantity.wishlistquantity === 0 && (
+          {username && wishlist.length === 0 && (
             <div className="cartEmptyCard">
               <h3> Please Add Items to WishList</h3>
 
