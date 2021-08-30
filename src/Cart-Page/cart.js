@@ -116,6 +116,22 @@ export const Cart = () => {
     }
   }
 
+  const paymentModal = () => {
+    let paymentOptions = {
+      description: "confirming your order",
+      currency: "INR",
+      key: "rzp_test_XYi5wqQKW8UQH4", // Use Ganerate API KEY here
+      amount: totalPrice * 100, // 100 = 1 RS
+      name: username,
+
+      theme: { color: "#6200ee" }
+    };
+
+    let rzp = new window.Razorpay(paymentOptions);
+
+    rzp.open();
+  };
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalPriceArray, setTotalPriceArray] = useState([]);
   const [originalPriceArray, setOriginalPriceArray] = useState([]);
@@ -225,11 +241,11 @@ export const Cart = () => {
             </span>
             <br />
             <br />
-            <button className="cartCheckoutPlaceOrderButton">
-              <a href="https://invoices.razorpay.com/v1/t/inv_GWTu2sfO5nDncj">
-                {" "}
-                Place order
-              </a>
+            <button
+              className="cartCheckoutPlaceOrderButton"
+              onClick={() => paymentModal()}
+            >
+              Place order
             </button>
           </div>
 
