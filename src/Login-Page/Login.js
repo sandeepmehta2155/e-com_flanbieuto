@@ -7,6 +7,7 @@ export function Login() {
     LogOut,
     LoginUserWithCredentials,
     userExists,
+    setUserExists,
     checkPassword,
     isUserLoggedIn,
     loader
@@ -60,26 +61,26 @@ export function Login() {
       <button className="LoginButton" onClick={LoginHandler}>
         {" "}
         Login
-        <div className="loginLoader" style={{ display: loader }}>
-          <div className="cartContainer">
-            <div className="cartWrapper">
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+        <div className="loginLoaderAnimation" style={{ display: loader }}>
+          <div className="loginContainer">
+            <div className="loginWrapper">
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
-              <div className="cartLoader">
-                <div className="cartDot"></div>
+              <div className="loginLoader">
+                <div className="loginDot"></div>
               </div>
             </div>
           </div>

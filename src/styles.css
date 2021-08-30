@@ -1287,23 +1287,23 @@ h1 {
 }
 
 /* LOADER FOR LOGIN BUTTON */
-.loginLoader {
+.loginLoaderAnimation {
   position: relative;
   bottom: 2.9rem;
   left: 7rem;
 }
 
-.cartWrapper {
+.loginWrapper {
   transform: scale(1.5);
 }
-.cartLoader {
+.loginLoader {
   height: 50px;
   width: 0.5px;
   position: absolute;
   animation: rotate 3.5s linear infinite;
 }
 
-.cartLoader .cartDot {
+.loginLoader .loginDot {
   top: 30px;
   height: 3px;
   width: 3px;
@@ -1312,22 +1312,22 @@ h1 {
   position: relative;
 }
 
-.cartLoader:nth-child(1) {
+.loginLoader:nth-child(1) {
   animation-delay: 0.15s;
 }
-.cartLoader:nth-child(2) {
+.loginLoader:nth-child(2) {
   animation-delay: 0.3s;
 }
-.cartLoader:nth-child(3) {
+.loginLoader:nth-child(3) {
   animation-delay: 0.45s;
 }
-.cartLoader:nth-child(4) {
+.loginLoader:nth-child(4) {
   animation-delay: 0.6s;
 }
-.cartLoader:nth-child(5) {
+.loginLoader:nth-child(5) {
   animation-delay: 0.75s;
 }
-.cartLoader:nth-child(6) {
+.loginLoader:nth-child(6) {
   animation-delay: 0.9s;
 }
 

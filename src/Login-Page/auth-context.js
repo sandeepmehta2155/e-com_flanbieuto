@@ -25,7 +25,8 @@ export function AuthProvider({ children }) {
   }
 
   async function LoginUserWithCredentials(userName, passwordInput) {
-    setUserExists("none");
+    if (userName === "") setUserExists("block");
+
     setCheckPassword("none");
     setLoader("block");
 
