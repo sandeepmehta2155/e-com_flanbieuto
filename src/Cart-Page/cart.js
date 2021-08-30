@@ -225,11 +225,11 @@ export const Cart = () => {
             </span>
             <br />
             <br />
-            <button
-              className="cartCheckoutPlaceOrderButton"
-              onClick={() => navigate("/checkout")}
-            >
-              Place order
+            <button className="cartCheckoutPlaceOrderButton">
+              <a href="https://invoices.razorpay.com/v1/t/inv_GWTu2sfO5nDncj">
+                {" "}
+                Place order
+              </a>
             </button>
           </div>
 

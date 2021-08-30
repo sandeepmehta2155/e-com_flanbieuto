@@ -302,9 +302,6 @@ export const WishList = () => {
                             }}
                           >
                             Add to cart
-                            <span role="img" aria-labelledby="cart">
-                              🛒
-                            </span>
                           </button>
                         )}
 

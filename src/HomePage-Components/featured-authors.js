@@ -6,7 +6,7 @@ export function FeaturedAuthors() {
   return (
     <>
       <div className="featuredObjects">
-        <h1> Featured India Authors </h1>
+        <h1> Featured Indian Authors </h1>
         {FeaturedAuthors.length === 0 && (
           <>
             <h1> Loading... </h1> <br /> <br />

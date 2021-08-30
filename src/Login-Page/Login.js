@@ -14,14 +14,6 @@ export function Login() {
   const [userName, setUserName] = useState("");
   const [passwordInput, setUserPassword] = useState("");
 
-  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
-    wishlistObj: []
-  };
-
-  const { cartlistObj } = JSON.parse(localStorage.getItem("cartlistObj")) || {
-    cartlistObj: []
-  };
-
   function LoginHandler() {
     return isUserLoggedIn
       ? LogOut()
@@ -30,14 +22,6 @@ export function Login() {
 
   return (
     <div className="loginPage">
-      <>
-        <div className="cartTotalQuantity">
-          <strong>{isUserLoggedIn ? cartlistObj.length : 0}</strong>
-        </div>
-        <div className="wishListTotalQuantity">
-          <strong>{isUserLoggedIn ? wishlistObj.length : 0}</strong>
-        </div>
-      </>
       <h2>Login</h2>
       <input
         className="userLoginInput"

@@ -401,9 +401,6 @@ export const Product = () => {
                               }}
                             >
                               Add to cart
-                              <span role="img" aria-labelledby="cart">
-                                🛒
-                              </span>
                             </button>
                           )}
 
