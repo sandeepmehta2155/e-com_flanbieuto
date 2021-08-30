@@ -44,11 +44,6 @@ export const Product = () => {
     cartlistObj: []
   };
 
-  const [quantity, setQuantity] = useState({
-    cartquantity: cartlistObj.length,
-    wishlistquantity: wishlistObj.length
-  });
-
   const [cart, setCart] = useState(cartlistObj);
 
   const notifyCart = () =>
@@ -90,12 +85,6 @@ export const Product = () => {
       );
     }
 
-    localStorage.setItem(
-      "cartlistLength",
-      JSON.stringify({ cartLength: response.data.cart.length })
-    );
-
-    setQuantity({ ...quantity, cartquantity: response.data.cart.length });
     setCart(response.data.cart);
   }
 
@@ -116,12 +105,6 @@ export const Product = () => {
       );
     }
 
-    localStorage.setItem(
-      "cartlistLength",
-      JSON.stringify({ cartLength: response.data.cart.length })
-    );
-
-    setQuantity({ ...quantity, cartquantity: response.data.cart.length });
     setCart(response.data.cart);
   }
 
@@ -142,16 +125,6 @@ export const Product = () => {
       );
 
       setWishlist(response.data.wishlist);
-
-      localStorage.setItem(
-        "wishlistLength",
-        JSON.stringify({ wishlistLength: response.data.wishlist.length })
-      );
-
-      setQuantity({
-        ...quantity,
-        wishlistquantity: response.data.wishlist.length
-      });
     } else {
       setWishlist([]);
     }
@@ -174,16 +147,6 @@ export const Product = () => {
       );
 
       setWishlist(response.data.wishlist);
-
-      setQuantity({
-        ...quantity,
-        wishlistquantity: response.data.wishlist.length
-      });
-
-      localStorage.setItem(
-        "wishlistLength",
-        JSON.stringify({ wishlistLength: response.data.wishlist.length })
-      );
     } else {
       setWishlist([]);
     }
@@ -215,12 +178,6 @@ export const Product = () => {
 
   return (
     <>
-      <div className="cartTotalQuantity">
-        <strong>{quantity.cartquantity}</strong>
-      </div>
-      <div className="wishListTotalQuantity">
-        <strong>{quantity.wishlistquantity}</strong>
-      </div>
       <>
         <h1 className="productsHead">Books in focus</h1>
 

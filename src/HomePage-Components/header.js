@@ -28,6 +28,7 @@ export function Header() {
         <Link to="/products">
           <h2 className="headerProductComponent">Products</h2>
         </Link>
+
         <Link to="/cart">
           <button className="cartButton">
             <svg

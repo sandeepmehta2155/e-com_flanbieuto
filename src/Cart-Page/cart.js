@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useProd } from "../Products-Page/product-context";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -12,10 +12,6 @@ export const Cart = () => {
     username: null
   };
 
-  const { wishlistObj } = JSON.parse(localStorage.getItem("wishlistObj")) || {
-    wishlistObj: []
-  };
-
   const { cartlistObj } = JSON.parse(localStorage.getItem("cartlistObj")) || {
     cartlistObj: []
   };
@@ -25,8 +21,7 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   const [quantity, setQuantity] = useState({
-    cartquantity: cartlistObj.length,
-    wishlistquantity: wishlistObj.length
+    cartquantity: cartlistObj.length
   });
 
   const notifyCart = () =>
@@ -185,12 +180,6 @@ export const Cart = () => {
 
   return (
     <>
-      <div className="cartTotalQuantity">
-        <strong>{quantity.cartquantity}</strong>
-      </div>
-      <div className="wishListTotalQuantity">
-        <strong>{quantity.wishlistquantity}</strong>
-      </div>
       <ToastContainer />
 
       <>
