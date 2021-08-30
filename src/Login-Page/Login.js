@@ -8,7 +8,8 @@ export function Login() {
     LoginUserWithCredentials,
     userExists,
     checkPassword,
-    isUserLoggedIn
+    isUserLoggedIn,
+    loader
   } = useAuth();
 
   const [userName, setUserName] = useState("");
@@ -57,7 +58,32 @@ export function Login() {
       </span>{" "}
       <br />
       <button className="LoginButton" onClick={LoginHandler}>
+        {" "}
         Login
+        <div className="loginLoader" style={{ display: loader }}>
+          <div className="cartContainer">
+            <div className="cartWrapper">
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+              <div className="cartLoader">
+                <div className="cartDot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </button>
       <Link to="/subscription">
         <button className="SignupButton">Sign Up</button>

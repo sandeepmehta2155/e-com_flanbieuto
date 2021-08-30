@@ -9,6 +9,7 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [userExists, setUserExists] = useState("none");
   const [checkPassword, setCheckPassword] = useState("none");
+  const [loader, setLoader] = useState("none");
 
   const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ export function AuthProvider({ children }) {
   async function LoginUserWithCredentials(userName, passwordInput) {
     setUserExists("none");
     setCheckPassword("none");
+    setLoader("block");
 
     const response = await axios.get(
       `https://e-commerce.sandeepmehta215.repl.co/userauth/${userName}?password=${passwordInput}`
@@ -65,8 +67,13 @@ export function AuthProvider({ children }) {
 
       setTimeout(() => {
         navigate("/products");
+        setLoader("none");
       }, 1000);
     }
+
+    setTimeout(() => {
+      setLoader("none");
+    }, 1000);
 
     response.data.message === "invalid username"
       ? setUserExists("block")
@@ -85,7 +92,8 @@ export function AuthProvider({ children }) {
         userExists,
         checkPassword,
         setUserExists,
-        setCheckPassword
+        setCheckPassword,
+        loader
       }}
     >
       {children}
