@@ -5,7 +5,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 export function Home() {
   return (
     <>
-      <AliceCarousel autoPlay autoPlayInterval="2000">
+      <AliceCarousel autoPlay autoPlayInterval="1000">
         <img
           src="https://www.detroitlabs.com/wp-content/uploads/2018/02/alfons-morales-YLSwjSy7stw-unsplash.jpg"
           className="ImgHomePage"

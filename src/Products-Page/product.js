@@ -70,6 +70,7 @@ export const Product = () => {
 
   async function AddToCart(_id) {
     notifyCart();
+
     const response = await axios.post(
       "https://e-commerce.sandeepmehta215.repl.co/updatecart/addtocart",
       {
@@ -84,7 +85,6 @@ export const Product = () => {
         JSON.stringify({ cartlistObj: response.data.cart })
       );
     }
-
     setCart(response.data.cart);
   }
 
