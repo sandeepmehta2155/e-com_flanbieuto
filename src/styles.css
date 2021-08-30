@@ -1033,6 +1033,7 @@ h1 {
   left: 27rem;
 }
 .cartEmptyCard {
+  margin: auto;
   border: 1px solid lightgray;
   margin: auto;
   text-align: center;
@@ -1105,8 +1106,10 @@ h1 {
 .LoginButton,
 .LogOutButton,
 .SignupButton,
-.AddItemsFromWishlist {
+.AddItemsFromWishlist,
+.viewProductsButton {
   cursor: pointer;
+
   font-size: 1rem;
   z-index: 0;
   height: 2rem;
@@ -1329,48 +1332,6 @@ h1 {
 }
 .loginLoader:nth-child(6) {
   animation-delay: 0.9s;
-}
-
-/*SIGNUP PAGE*/
-
-/*FEEDBACK PAGE*/
-.feedbackPage {
-  padding: 2rem;
-  height: 22rem;
-}
-.feedbackPage input {
-  float: right;
-  margin-right: 27%;
-  width: 30vh;
-  border: 1px solid #ccc;
-}
-.feedbackPage textarea {
-  width: 27vh;
-  border: 1px solid #ccc;
-}
-
-.feedbackInputMessage {
-  float: right;
-  margin-right: 27%;
-  height: 15vh;
-  width: 25vh;
-  padding: 12px;
-  border: 1px solid #ccc;
-}
-.btn.btn-primary.feedback-button {
-  position: relative;
-  top: 8rem;
-  left: 10rem;
-}
-.successFullFeedback,
-.failedFeedback {
-  position: relative;
-  top: 8rem;
-  left: 10rem;
-  color: green;
-}
-.failedFeedback {
-  color: red;
 }
 
 /* Scroll Bar*/
@@ -1600,7 +1561,7 @@ h1 {
     position: fixed;
     height: 1.5rem;
     width: 1.5rem;
-    right: 12vh;
+    right: 4rem;
     top: 1.5rem;
   }
 
@@ -1608,7 +1569,7 @@ h1 {
     position: fixed;
     height: 2rem;
     width: 2rem;
-    right: 16vh;
+    right: 6rem;
     top: 1.65rem;
   }
   .bi.bi-person-circle {
@@ -1624,14 +1585,18 @@ h1 {
     position: fixed;
     font-size: 0.5rem;
     top: 3rem;
-    right: 1.3rem;
+    right: 1.55rem;
+  }
+
+  .viewProductsButton {
+    width: 8rem;
   }
   /* HOME page images */
   .ImgHomePage {
     position: relative;
     top: 9rem;
     width: 100%;
-    height: 20rem;
+    height: 30rem;
   }
 
   .filters {
@@ -1641,19 +1606,6 @@ h1 {
     display: none;
   }
 
-  /* DARK MODE SWICTHES */
-
-  .outerSwitch {
-    height: 1.6rem;
-    width: 3.5rem;
-    border-radius: 2rem;
-    position: absolute;
-    top: 8.7rem;
-    right: 1rem;
-    margin-top: 1rem;
-    color: grey;
-    outline: none;
-  }
   /* SORTING AND FILTER */
   .containerForSelectComponent {
     display: none;
@@ -1722,7 +1674,7 @@ h1 {
 
   .cartCheckOut {
     position: relative;
-    top: 12rem;
+    top: 1rem;
     right: 1rem;
     display: block;
     margin: auto;
@@ -1735,13 +1687,14 @@ h1 {
   .wishListPage {
     left: 0;
     text-align: center;
+    justify-items: center;
     width: 100%;
   }
 
   .cartDetails {
     position: relative;
-    top: 10rem;
-    margin-bottom: 10rem;
+    top: 6.5rem;
+    margin-bottom: 1rem;
     border: none;
     width: 95%;
   }
@@ -1813,7 +1766,13 @@ h1 {
     border: none;
     overflow: hidden;
     width: 100%;
+    margin: auto;
     margin-bottom: 10rem;
+  }
+
+  .wishListItems {
+    margin: 0;
+    padding: 0;
   }
 
   /* FOOTER*/

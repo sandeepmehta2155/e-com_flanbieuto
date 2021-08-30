@@ -271,16 +271,15 @@ export const Cart = () => {
 
               <Link to="/wishlist">
                 <button className="AddItemsFromWishlist">
-                  {" "}
                   Add items from Wishlist
                 </button>
               </Link>
             </div>
           )}
-          <ul>
+          <ul className="wishListItems">
             {itemsInProduct.map((obj) => {
               return (
-                <div key={obj.id}>
+                <div key={obj.id} className="wishListItems">
                   {cart
                     .map((cartObj) => {
                       if (cartObj.cartid !== obj.id) return obj;

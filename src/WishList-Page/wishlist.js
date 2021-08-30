@@ -210,14 +210,14 @@ export const WishList = () => {
               <br />
               <br />
               <Link to="/products">
-                <button className="LoginButton">View Products</button>
+                <button className="viewProductsButton">View Products</button>
               </Link>
             </div>
           )}
-          <ul>
+          <ul className="wishListItems">
             {itemsInProduct.map((obj) => {
               return (
-                <ul key={obj.id}>
+                <ul key={obj.id} className="wishListItems">
                   {wishlist
                     .map((wishlistObj) => {
                       if (wishlistObj !== obj.id) return obj;
