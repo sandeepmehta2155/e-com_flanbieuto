@@ -39,7 +39,9 @@ export function FeaturedAuthors() {
             (obj) =>
               obj.nation === "India" && (
                 <li key={obj.icon} className="list list-group-item">
-                  <img className="circle" alt="loading" src={obj.icon} />
+                  <a href={obj.aboutWikilink}>
+                    <img className="circle" alt="loading" src={obj.icon} />
+                  </a>
                 </li>
               )
           )}
@@ -77,7 +79,9 @@ export function FeaturedAuthors() {
             (obj) =>
               obj.nation !== "India" && (
                 <li key={obj.icon} className="list list-group-item">
-                  <img className="circle" alt="loading" src={obj.icon} />
+                  <a href={obj.aboutWikilink}>
+                    <img className="circle" alt="loading" src={obj.icon} />
+                  </a>
                 </li>
               )
           )}
@@ -113,7 +117,9 @@ export function FeaturedAuthors() {
         <ul className="img-group">
           {FeaturedSeries.map((obj) => (
             <li key={obj.titleSrc} className="list list-group-item">
-              <img className="square" alt="loading" src={obj.titleSrc} />
+              <a href={obj.aboutWikilink}>
+                <img className="square" alt="loading" src={obj.titleSrc} />
+              </a>
             </li>
           ))}
         </ul>
