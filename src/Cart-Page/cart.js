@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useProd } from "../Products-Page/product-context";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -17,8 +17,6 @@ export const Cart = () => {
   };
 
   const [cart, setCart] = useState(cartlistObj);
-
-  const navigate = useNavigate();
 
   const [quantity, setQuantity] = useState({
     cartquantity: cartlistObj.length
@@ -117,19 +115,23 @@ export const Cart = () => {
   }
 
   const paymentModal = () => {
-    let paymentOptions = {
-      description: "confirming your order",
-      currency: "INR",
-      key: "rzp_test_XYi5wqQKW8UQH4", // Use Ganerate API KEY here
-      amount: totalPrice * 100, // 100 = 1 RS
-      name: username,
+    try {
+      let paymentOptions = {
+        description: "proceed with payments to book order",
+        currency: "INR",
+        key: "rzp_test_XYi5wqQKW8UQH4", // Use Ganerate API KEY here
+        amount: totalPrice * 100, // 100 = 1 RS
+        name: username,
 
-      theme: { color: "#6200ee" }
-    };
+        theme: { color: "#9e9e9e" }
+      };
 
-    let rzp = new window.Razorpay(paymentOptions);
+      let rzp = new window.Razorpay(paymentOptions);
 
-    rzp.open();
+      rzp.open();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const [totalPrice, setTotalPrice] = useState(0);
