@@ -8,6 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 export const Cart = () => {
   const { itemsInProduct } = useProd();
 
+  const [displayPaymentSuccessfull, setDisplayPaymentSuccessfull] = useState(
+    "none"
+  );
+
   const { username } = JSON.parse(localStorage.getItem("username")) || {
     username: null
   };
@@ -24,6 +28,17 @@ export const Cart = () => {
 
   const notifyCart = () =>
     toast.success("Updating Cart", {
+      position: "bottom-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
+
+  const orderPlacedSuccessfully = () =>
+    toast.success("Order is placed successfully", {
       position: "bottom-center",
       autoClose: 2000,
       hideProgressBar: false,
@@ -87,6 +102,33 @@ export const Cart = () => {
     }
   }
 
+  async function EmptyCart(_id) {
+    orderPlacedSuccessfully();
+    const response = await axios.post(
+      "https://e-commerce.sandeepmehta215.repl.co/updatecart/emptycart",
+      {
+        username: username,
+        cartids: []
+      }
+    );
+
+    if (typeof response.data.cart === "object") {
+      localStorage.setItem(
+        "cartlistObj",
+        JSON.stringify({ cartlistObj: response.data.cart })
+      );
+
+      localStorage.setItem(
+        "cartlistLength",
+        JSON.stringify({ cartLength: response.data.cart.length })
+      );
+      if (username) {
+        setQuantity({ ...quantity, cartquantity: response.data.cart.length });
+        setCart(response.data.cart);
+      }
+    }
+  }
+
   async function RemoveFromCart(_id) {
     notifyCart();
     const response = await axios.post(
@@ -123,6 +165,16 @@ export const Cart = () => {
         amount: totalPrice * 100, // 100 = 1 RS
         name: username,
 
+        handler: function (response) {
+          if (response.razorpay_payment_id) {
+            EmptyCart();
+            setDisplayPaymentSuccessfull("block");
+
+            setTimeout(() => setDisplayPaymentSuccessfull("none"), 2000);
+          }
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+        },
         theme: { color: "#9e9e9e" }
       };
 
@@ -250,7 +302,6 @@ export const Cart = () => {
               Place order
             </button>
           </div>
-
           {quantity.cartquantity === 0 && (
             <div className="cartEmptyCard">
               <svg
@@ -368,6 +419,12 @@ export const Cart = () => {
               );
             })}
           </ul>
+          <img
+            style={{ display: displayPaymentSuccessfull }}
+            className="paymentSuccessful"
+            src="https://cdn.dribbble.com/users/282075/screenshots/4756095/icon_confirmation.gif"
+            alt="loading"
+          />
         </div>
       </>
     </>

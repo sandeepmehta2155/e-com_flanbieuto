@@ -1419,6 +1419,12 @@ h1 {
 .filterAndSort {
   display: none;
 }
+.paymentSuccessful {
+  position: fixed;
+  top: 10rem;
+  left: 25%;
+  height: 50%;
+}
 /* MPDI SCREENS */
 @media (max-width: 1280px) {
   .Img {
