@@ -2,12 +2,10 @@ import { NavLink } from "react-router-dom";
 
 export function Footer() {
   const AboutItems = [
-    "Contact Us",
-    "About Us",
-    "FAQ",
-    "Carriers",
-    "Flanbieuto Cares",
-    "Gift A Smile"
+    { display: "Contact Us", link: "contactus" },
+    { display: "FAQ", link: "faq" },
+    { display: "Flanbieuto Cares", link: "flanbieutocares" },
+    { display: "Gift A Smile", link: "giftsmile" }
   ];
 
   return (
@@ -23,7 +21,7 @@ export function Footer() {
             <ul>
               {AboutItems.map((obj, index) => (
                 <li key={index} className="aboutUsList">
-                  {obj}
+                  <NavLink to={obj.link}>{obj?.display}</NavLink>
                 </li>
               ))}
             </ul>
