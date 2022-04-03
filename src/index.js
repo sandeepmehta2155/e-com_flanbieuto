@@ -25,6 +25,7 @@ export { UserProfile } from "./UserProfile-Page/userprofile";
 export { PrivateRoute } from "./UserProfile-Page/PrivateRoute";
 export { RouteComponents } from "./Router-Components/Route-Components";
 export { AboutUs } from "./AboutUs/about-us";
+export { ContactUs } from "./AboutUs/contact-us";
 
 const rootElement = document.getElementById("root");
 
