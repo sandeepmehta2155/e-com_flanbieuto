@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export function Footer() {
   const AboutItems = [
     "Contact Us",
@@ -13,9 +15,11 @@ export function Footer() {
       <footer>
         <div className="footer">
           <div className="About">
-            <span className="aboutUs">
-              <strong>About Us</strong>
-            </span>
+            <NavLink to="/aboutus">
+              <span className="aboutUs">
+                <strong>About Us</strong>
+              </span>
+            </NavLink>
             <ul>
               {AboutItems.map((obj, index) => (
                 <li key={index} className="aboutUsList">

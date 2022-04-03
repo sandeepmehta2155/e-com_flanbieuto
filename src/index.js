@@ -24,6 +24,7 @@ export { WishList } from "./WishList-Page/wishlist";
 export { UserProfile } from "./UserProfile-Page/userprofile";
 export { PrivateRoute } from "./UserProfile-Page/PrivateRoute";
 export { RouteComponents } from "./Router-Components/Route-Components";
+export { AboutUs } from "./AboutUs/about-us";
 
 const rootElement = document.getElementById("root");
 

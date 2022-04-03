@@ -12,6 +12,7 @@ export function RouteComponents() {
         <Route path="/login" element={<useComponent.Login />} />
         <Route path="/subscription" element={<useComponent.Subscription />} />
         <Route path="*" element={<useComponent.RedirectPage />} />
+        <Route path="/aboutus" element={<useComponent.AboutUs />} />
         <useComponent.PrivateRoute
           path="/profile"
           element={<useComponent.UserProfile />}
