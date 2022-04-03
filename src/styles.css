@@ -173,6 +173,11 @@ h1 {
   margin: 170px 70px 70px 35px;
 }
 
+.aboutusPara {
+  width: 60%;
+  margin: auto;
+}
+
 .cartButton,
 .wishlistButton {
   background-color: var(--secondary-color);
