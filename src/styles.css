@@ -169,6 +169,10 @@ h1 {
   font-size: 2rem;
 }
 
+.aboutus {
+  margin: 170px 70px 70px 35px;
+}
+
 .cartButton,
 .wishlistButton {
   background-color: var(--secondary-color);
