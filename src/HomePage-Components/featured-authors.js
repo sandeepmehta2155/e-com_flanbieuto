@@ -40,7 +40,10 @@ export function FeaturedAuthors() {
               obj.nation === "India" && (
                 <li key={obj.icon} className="list list-group-item">
                   <a href={obj.aboutWikilink}>
-                    <img className="circle" alt="loading" src={obj.icon} />
+                    <img onError={({currentTarget}) => {
+                      currentTarget.onError = null;
+                      currentTarget.src = "https://images.newindianexpress.com/uploads/user/imagelibrary/2018/12/19/original/accidental.jpg"
+                    }} className="circle" alt="loading" src={obj.icon} />
                   </a>
                 </li>
               )
