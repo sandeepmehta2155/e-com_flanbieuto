@@ -7,11 +7,6 @@ export function Home() {
     <img
       alt=""
       className="ImgHomePage"
-      src="https://www.detroitlabs.com/wp-content/uploads/2018/02/alfons-morales-YLSwjSy7stw-unsplash.jpg"
-    />,
-    <img
-      alt=""
-      className="ImgHomePage"
       src="https://whataftercollege.com/wp-content/uploads/2019/03/3-2-1024x535.jpg"
     />,
     <img
