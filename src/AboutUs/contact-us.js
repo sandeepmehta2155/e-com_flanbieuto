@@ -6,6 +6,8 @@ export const ContactUs = () => {
       <p className="aboutusPara"> Email : mehta2155@gmail.com</p>
       <p className="aboutusPara"> Phone : +91 7041818312</p>
       <p className="aboutusPara"> Address : A-504, Parimal Exotica, Near Navyug School, Naroda, Ahmedabad</p>
+      <p className="aboutusPara"> Pincode : 382330</p>
+
     </div>
   );
 };
